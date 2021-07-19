@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    header("location:../MVC/vista/loguin.php");   
+             header("location:../ProyectoBibliotecaHtml/vista/loguin.php");   
     ?>  
 </body>
 </html>
