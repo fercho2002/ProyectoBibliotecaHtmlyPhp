@@ -34,7 +34,6 @@ session_start();
             
              
           <div class="divgenerales" id="div3">
-              <h1> sele :<?php echo $_SESSION['nombre'] ?></h1>
               <label class="labelgenerales">nombreLibro</label>
              <input  id="input3" class="inputgenerales" type="text"  placeholder="identificacion" name="fnombre" >
           </div>

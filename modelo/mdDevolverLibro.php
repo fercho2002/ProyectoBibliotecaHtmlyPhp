@@ -46,6 +46,16 @@ session_start();
                 return $this->comoVa;
             
             }
+
+            function getnombreLibro(){
+                return $this->nombreLibro;
+            }
+            function getfechaDePrestamo(){
+                return $this->fechaDePrestamo;
+            }
+            function getfechaDeEntregado(){
+                return $this->fechaDeEntregado;
+            }
         }
     }
 ?>
