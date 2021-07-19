@@ -23,9 +23,7 @@
             <div class="divgenerales" id="div1">
               <label class="labelgeneralestablas  ">Libros Disponibles</label>
             </div>
-            <div >
-                <button type="submit" class="btn btn-warning botones " name="fboton" value="buscar" style="margin: 10px 20px;" onclick="document.location.reload();">Actualizar</button>
-          </div >
+            
             <table class="table">
   <thead>
     <tr>
