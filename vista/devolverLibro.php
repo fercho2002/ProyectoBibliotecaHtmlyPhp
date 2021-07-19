@@ -1,6 +1,4 @@
-<?php 
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +12,7 @@ session_start();
 <body>
 <content>
 
-      <form id="general" >	 	
+      <form id="general" action="../controlador/controladorDevolverLibro.php" method="post">	 	
       
       <a href="principal.php" class="btn btn-success" style="position:absolute; top:20px; right:20px;">volver a inicio</a>
           <div id="diviz" class="divs">
@@ -30,21 +28,33 @@ session_start();
                 <button type="submit" class="btn btn-warning botones " name="fboton" value="buscar" style="margin: 10px 20px;">Buscar</button>
             </div >
 
-           
+           <?php 
+            @$nombre=$_GET['nombre'];
+            @$fechapre=$_GET['fechapre'];
+            @$fechaen=$_GET['fechaen'];
+            //if(isset($nombre)){
+            //    echo '<div  class="alert alert-success" role="alert">nombre: '.$nombre.'</div>';
+            //    echo '<div  class="alert alert-success" role="alert">fecha De Prestamo: '.$fechapre.'</div>'; 
+            //    echo '<div  class="alert alert-success" role="alert">fecha De Entrega: '.$fechaen.'</div>'; 
+            //}
+            //else{
+            //    echo '<div  class="alert alert-danger" role="alert">no tiene nada</div>';  
+            //}
+           ?>
             
              
           <div class="divgenerales" id="div3">
               <label class="labelgenerales">nombreLibro</label>
-             <input  id="input3" class="inputgenerales" type="text"  placeholder="identificacion" name="fnombre" >
+             <input  id="input3" class="inputgenerales" type="text"  placeholder="identificacion" name="fnombre" value="<?php echo $nombre ?>">
           </div>
   
           <div class="divgenerales" id="div5">
               <label class="labelgenerales">Fecha De Prestamo</label>
-              <input  id="input5" class="inputgenerales" type="text"  placeholder="id" name="ffechaDePrestamo " value="" >
+              <input  id="input5" class="inputgenerales" type="text"  placeholder="id" name="ffechaDePrestamo " value="<?php echo $fechapre ?>" >
           </div>
           <div class="divgenerales" id="div6">
              <label class="labelgenerales">Fecha De Entrega</label>
-             <input  id="input5" class="inputgenerales" type="text"  placeholder="id" name="ffechaDeEntrega" value="" >
+             <input  id="input5" class="inputgenerales" type="text"  placeholder="id" name="ffechaDeEntrega" value="<?php echo $fechaen ?> ">
           </div>
             
           <hr  width=100% size=5   color="#ff9900" >

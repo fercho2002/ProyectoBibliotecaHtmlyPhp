@@ -12,7 +12,7 @@ session_start();
         private $observacion;
         private $comoVa;
         
-        $_SESSION['nombre']='pedro';
+        
 
         function __construct($co,$idLi,$idUs,$ob){
 
@@ -27,35 +27,34 @@ session_start();
             
             $prestado = "prestado";
             $estado = mysqli_query($this->conexion,"SELECT nombrelibro,fechadeprestamo,fechadeentregado FROM librospre WHERE idusuariopre = '$this->idUsuario' and idlibro = '$this->idLibro' and actualmente = '$prestado' ");
-            if(mysqli_num_rows($seleccionar)){
+            if(mysqli_num_rows($estado)){
                 
                 $unlibro = mysqli_fetch_array($estado);
                 $this->nombreLibro = $unlibro["nombrelibro"];
                 $this->fechaDePrestamo = $unlibro["fechadeprestamo"];
-                $this->fechaDeEntregado = $unlibro["fechadeentregado"]
+                $this->fechaDeEntregado = $unlibro["fechadeentregado"];
+               
+         
                 $this->comoVa = "seleccionlisto";
-                
-                $_SESSION['nombre']=$this->nombreLibro;
-                $_SESSION['fechap']=$this->fechaDePrestamo;
-                $_SESSION['fechae']=$this->fechaDeEntregado;
-                return $this->comoVa;
             }
             
             else{
                 $this->comoVa = "seleccionmal";
-                return $this->comoVa;
+                
             
             }
+            return $this->comoVa;
 
-            function getnombreLibro(){
-                return $this->nombreLibro;
-            }
-            function getfechaDePrestamo(){
-                return $this->fechaDePrestamo;
-            }
-            function getfechaDeEntregado(){
-                return $this->fechaDeEntregado;
-            }
+            
+        }
+        function getnombreLibro(){
+            return $this->nombreLibro;
+        }
+        function getfechaDePrestamo(){
+            return $this->fechaDePrestamo;
+        }
+        function getfechaDeEntregado(){
+            return $this->fechaDeEntregado;
         }
     }
 ?>
