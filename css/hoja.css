@@ -1,0 +1,37 @@
+.fondo{
+    background-image: url(imagenes/fgh.PNG);
+    background-position: center center;
+    background-repeat: no-repeat; background-position: center center;
+}
+.ab{
+    width: 300px;
+    background-color: blue;
+}
+#as{
+    background-color: blue;
+}
+
+.fondodegradado{
+    background-color: #FFe259 ;
+    background: linear-gradient(to right,#FF8C00, #FFe259); 
+}
+.botondegradado{
+    background-color: #FFC100 ;
+    background: linear-gradient(to right,#FFC100, #FFFFFF); 
+}
+.botones{
+    background-color: #FF8C00 !important ;
+    color: white !important;
+    border-color: white !important;
+}
+.containerH{
+    border: 5px solid white !important;
+    border-bottom-right-radius: 8px 8px;
+    border-bottom-left-radius: 8px 8px;
+    border-top-right-radius: 8px 8px;
+    border-top-left-radius: 8px 8px;
+
+}
+.var{
+    height: 60px !important;
+}
