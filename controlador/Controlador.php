@@ -3,7 +3,7 @@
     include_once("../modelo/Conectar.php");
     $objeto = new Conectar();
     $conexion = $objeto->conectarbd();
-
+    //verifica que el boton sea el de ingresar
     if($ingreso=='ingresar'){
         $nik = $_POST["femail"];
         $pass = $_POST["fcontraseña"];
