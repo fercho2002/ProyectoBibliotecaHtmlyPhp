@@ -47,6 +47,37 @@ session_start();
 
             
         }
+        
+        function editar1(){
+            $disponible = "disponible";
+            $como = "";
+            try{
+                $editar = mysqli_query($this->conexion,"UPDATE libros  SET actualmente= '$disponible'   where idlibro = '$this->idLibro'");
+                $como = "bien";
+                return $como;
+            }
+            catch(mysqli_sql_exeption $ex){
+                $como= "mal";
+                return $como;
+            }
+
+        }
+        function editar2(){
+            $como = "";
+            $devuelto = "devuelto";
+            $disponible = "disponible";
+            $prestado = "prestado";
+            try{
+                $editar = mysqli_query($this->conexion,"UPDATE librospre  SET actualmente= '$devuelto' , retrazo = '$this->observacion' where idlibro = '$this->idLibro' and idusuariopre = '$this->idUsuario' and actualmente = '$prestado'");
+                $como = "bien";
+                return $como;
+            }
+            catch(mysqli_sql_exeption $ex){
+                $como= "mal";
+                return $como;
+            }
+
+        }
         function getnombreLibro(){
             return $this->nombreLibro;
         }

@@ -13,33 +13,32 @@
 <content>
 
       <form id="general" action="../controlador/controladorDevolverLibro.php" method="post">	 	
-      
+      <?php 
+           
+            @$idl = $_GET['idlibro'];
+            @$idu = $_GET['idusuario'];
+            
+           ?>
       <a href="principal.php" class="btn btn-success" style="position:absolute; top:20px; right:20px;">volver a inicio</a>
           <div id="diviz" class="divs">
             <div class="divgenerales" id="div1">
               <label class="labelgenerales  ">Identificacion </label>
-              <input  id="input1" class="inputgenerales " type="text"  placeholder="id Usuario" name="fidUsuario">
+              <input  id="input1" class="inputgenerales " type="text"  placeholder="id Usuario" name="fidUsuario" value="<?php echo $idu ?>">
           </div>
           <div class="divgenerales" id="div2">
               <label class="labelgenerales  ">Id Libro </label>
-              <input  id="input2" class="inputgenerales" type="text"  placeholder="idLibro" name="fidLibro">
+              <input  id="input2" class="inputgenerales" type="text"  placeholder="idLibro" name="fidLibro" value="<?php echo $idl ?>">
           </div>
           <div >
                 <button type="submit" class="btn btn-warning botones " name="fboton" value="buscar" style="margin: 10px 20px;">Buscar</button>
             </div >
 
            <?php 
+           
             @$nombre=$_GET['nombre'];
             @$fechapre=$_GET['fechapre'];
             @$fechaen=$_GET['fechaen'];
-            //if(isset($nombre)){
-            //    echo '<div  class="alert alert-success" role="alert">nombre: '.$nombre.'</div>';
-            //    echo '<div  class="alert alert-success" role="alert">fecha De Prestamo: '.$fechapre.'</div>'; 
-            //    echo '<div  class="alert alert-success" role="alert">fecha De Entrega: '.$fechaen.'</div>'; 
-            //}
-            //else{
-            //    echo '<div  class="alert alert-danger" role="alert">no tiene nada</div>';  
-            //}
+            
            ?>
             
              
@@ -68,7 +67,7 @@
           </div>
          
             <div >
-                <button type="submit" class="btn btn-warning botones " name="fboton" value="limpiar" style="margin: 10px 20px; width:120px;">limpiar</button>
+                <button type="submit" class="btn btn-warning botones " name="fboton" value="limpiar" style="margin: 10px 20px; width:120px;"onclick="document.location.reload();">limpiar</button>
             
                 <button type="submit" class="btn btn-warning botones " name="fboton" value="devolver" style="margin: 10px 20px; width: 120px;">devolver</button>
             </div>
@@ -76,10 +75,10 @@
           <?php
                     @$mensaje = $_GET['mensaje'];
                     if (isset($mensaje)){
-                    if($mensaje=='insertado'){
+                    if($mensaje=='devuelto'){
                             echo '<div  class="alert alert-success" role="alert"> insertado Correctamente</div>';
                         }
-                    if($mensaje=='noinsertado'){
+                    if($mensaje=='nodevuelto'){
                             echo '<div  class="alert alert-danger" role="alert">error al insertar</div>';
                         }
 

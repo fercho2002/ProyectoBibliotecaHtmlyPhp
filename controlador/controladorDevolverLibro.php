@@ -17,6 +17,31 @@
         $nombre = $modelo->getnombrelibro();
         $fechapre = $modelo->getfechaDePrestamo();
         $fechaen = $modelo->getfechaDeEntregado();
-        header("location:../vista/devolverLibro.php?nombre=$nombre &  fechapre=$fechapre  & fechaen=$fechaen");
+        session_start();
+        $_SESSION['nombreLibro'] = $nombre;
+        header("location:../vista/devolverLibro.php?nombre=$nombre &  fechapre=$fechapre  & fechaen=$fechaen & idlibro=$idl & idusuario=$idU " );
+        
     }
+    if($boton == "devolver"){
+        $idUsuario = $_POST['fidUsuario'];
+        $idLibro = $_POST['fidLibro'];
+        $observacion = $_POST['fobservacion'];
+        include_once("../modelo/mdDevolverLibro.php");
+        $modelo = new mdDevolverLibro($conexionbd,$idLibro,$idUsuario,$observacion);
+        $estado = $modelo->editar1();
+        if($estado == "bien"){
+            $estado = $modelo->editar2();
+            if($estado == "bien"){
+                header("location:../vista/devolverLibro.php?mensaje=devuelto");
+            }
+            else{
+                header("location:../vista/devolverLibro.php?mensaje=nodevuelto");
+            }
+        }
+       
+        else{
+            header("location:../vista/devolverLibro.php?mensaje=nodevuelto");
+        }
+    }
+  
 ?>
