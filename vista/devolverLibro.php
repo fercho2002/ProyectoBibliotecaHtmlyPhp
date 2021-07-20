@@ -44,16 +44,16 @@
              
           <div class="divgenerales" id="div3">
               <label class="labelgenerales">nombreLibro</label>
-             <input  id="input3" class="inputgenerales" type="text"  placeholder="identificacion" name="fnombre" value="<?php echo $nombre ?>">
+             <input  id="input3" class="inputgenerales" type="text"  placeholder="" name="fnombre" value="<?php echo $nombre ?>">
           </div>
   
           <div class="divgenerales" id="div5">
               <label class="labelgenerales">Fecha De Prestamo</label>
-              <input  id="input5" class="inputgenerales" type="text"  placeholder="id" name="ffechaDePrestamo " value="<?php echo $fechapre ?>" >
+              <input  id="input5" class="inputgenerales" type="text"  placeholder="dd-mm-yyyy" name="ffechaDePrestamo " value="<?php echo $fechapre ?>" >
           </div>
           <div class="divgenerales" id="div6">
              <label class="labelgenerales">Fecha De Entrega</label>
-             <input  id="input5" class="inputgenerales" type="text"  placeholder="id" name="ffechaDeEntrega" value="<?php echo $fechaen ?> ">
+             <input  id="input5" class="inputgenerales" type="text"  placeholder="dd-mm-yyyy" name="ffechaDeEntrega" value="<?php echo $fechaen ?> ">
           </div>
             
           <hr  width=100% size=5   color="#ff9900" >
@@ -76,10 +76,10 @@
                     @$mensaje = $_GET['mensaje'];
                     if (isset($mensaje)){
                     if($mensaje=='devuelto'){
-                            echo '<div  class="alert alert-success" role="alert"> insertado Correctamente</div>';
+                            echo '<div  class="alert alert-success" role="alert"> El Libro se devolvio </div>';
                         }
                     if($mensaje=='nodevuelto'){
-                            echo '<div  class="alert alert-danger" role="alert">error al insertar</div>';
+                            echo '<div  class="alert alert-danger" role="alert">error al devolver el libro</div>';
                         }
 
                     }

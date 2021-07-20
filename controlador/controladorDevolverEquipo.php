@@ -9,38 +9,37 @@
 
     if($boton == "buscar"){
         $idU = $_POST["fidUsuario"];
-        $idl = $_POST["fidLibro"];
+        $ser = $_POST["fserial"];
         $ob = $_POST["fobservacion"];
-        include_once("../modelo/mdDevolverLibro.php");
-        $modelo = new mdDevolverLibro($conexionbd,$idl,$idU,$ob);
+        include_once("../modelo/mdDevolverEquipo.php");
+        $modelo = new mdDevolverEquipo($conexionbd,$ser,$idU,$ob);
         $buscar = $modelo->seleccionar();
-        $nombre = $modelo->getnombrelibro();
+        $marca = $modelo->getmarca();
         $fechapre = $modelo->getfechaDePrestamo();
         $fechaen = $modelo->getfechaDeEntregado();
-        session_start();
-        $_SESSION['nombreLibro'] = $nombre;
-        header("location:../vista/devolverLibro.php?nombre=$nombre &  fechapre=$fechapre  & fechaen=$fechaen & idlibro=$idl & idusuario=$idU " );
+       
+    header("location:../vista/devolverComputador.php? marca=$marca &  fechapre=$fechapre  & fechaen=$fechaen & serial=$ser & idusuario=$idU " );
         
     }
     if($boton == "devolver"){
         $idUsuario = $_POST['fidUsuario'];
-        $idLibro = $_POST['fidLibro'];
+        $serial = $_POST['fserial'];
         $observacion = $_POST['fobservacion'];
-        include_once("../modelo/mdDevolverLibro.php");
-        $modelo = new mdDevolverLibro($conexionbd,$idLibro,$idUsuario,$observacion);
+        include_once("../modelo/mdDevolverEquipo.php");
+        $modelo = new mdDevolverEquipo($conexionbd,$serial,$idUsuario,$observacion);
         $estado = $modelo->editar1();
         if($estado == "bien"){
             $estado = $modelo->editar2();
             if($estado == "bien"){
-                header("location:../vista/devolverLibro.php?mensaje=devuelto");
+                header("location:../vista/devolverComputador.php?mensaje=devuelto");
             }
             else{
-                header("location:../vista/devolverLibro.php?mensaje=nodevuelto");
+                header("location:../vista/devolverComputador.php?mensaje=nodevuelto");
             }
         }
        
         else{
-            header("location:../vista/devolverLibro.php?mensaje=nodevuelto");
+            header("location:../vista/devolverComputador.php?mensaje=nodevuelto");
         }
     }
   

@@ -12,7 +12,7 @@
 <body>
 <content>
 
-      <form id="general" action="../controlador/controladorDevolverLibro.php" method="post">	 	
+      <form id="general" action="../controlador/controladorDevolverEquipo.php" method="post">	 	
       <?php 
            
             @$ser = $_GET['serial'];
@@ -27,7 +27,7 @@
           </div>
           <div class="divgenerales" id="div2">
               <label class="labelgenerales  ">Serial Computador </label>
-              <input  id="input2" class="inputgenerales" type="text"  placeholder="idLibro" name="fserial" value="<?php echo $ser ?>">
+              <input  id="input2" class="inputgenerales" type="text"  placeholder="serial computador" name="fserial" value="<?php echo $ser ?>">
           </div>
           <div >
                 <button type="submit" class="btn btn-warning botones " name="fboton" value="buscar" style="margin: 10px 20px;">Buscar</button>
@@ -35,25 +35,25 @@
 
            <?php 
            
-            @$marca=$_GET['marca'];
-            @$fechapre=$_GET['fechapre'];
-            @$fechaen=$_GET['fechaen'];
+            @$marca = $_GET['marca'];
+            @$fechapre = $_GET['fechapre'];
+            @$fechaen = $_GET['fechaen'];
             
            ?>
             
              
           <div class="divgenerales" id="div3">
               <label class="labelgenerales">Marca</label>
-             <input  id="input3" class="inputgenerales" type="text"  placeholder="identificacion" name="fnombre" value="<?php echo $marca ?>">
+             <input  id="input3" class="inputgenerales" type="text"  placeholder="" name="fnombre" value="<?php echo $marca ?>">
           </div>
   
           <div class="divgenerales" id="div5">
               <label class="labelgenerales">Fecha De Prestamo</label>
-              <input  id="input5" class="inputgenerales" type="text"  placeholder="id" name="ffechaDePrestamo " value="<?php echo $fechapre ?>" >
+              <input  id="input5" class="inputgenerales" type="text"  placeholder="dd-mm-yyyy" name="ffechaDePrestamo " value="<?php echo $fechapre ?>" >
           </div>
           <div class="divgenerales" id="div6">
              <label class="labelgenerales">Fecha De Entrega</label>
-             <input  id="input5" class="inputgenerales" type="text"  placeholder="id" name="ffechaDeEntrega" value="<?php echo $fechaen ?> ">
+             <input  id="input5" class="inputgenerales" type="text"  placeholder="dd-mm-yyyy" name="ffechaDeEntrega" value="<?php echo $fechaen ?> ">
           </div>
             
           <hr  width=100% size=5   color="#ff9900" >
@@ -76,10 +76,10 @@
                     @$mensaje = $_GET['mensaje'];
                     if (isset($mensaje)){
                     if($mensaje=='devuelto'){
-                            echo '<div  class="alert alert-success" role="alert"> insertado Correctamente</div>';
+                            echo '<div  class="alert alert-success" role="alert"> Comptador Devuelto</div>';
                         }
                     if($mensaje=='nodevuelto'){
-                            echo '<div  class="alert alert-danger" role="alert">error al insertar</div>';
+                            echo '<div  class="alert alert-danger" role="alert">error al Devolver Computador</div>';
                         }
 
                     }

@@ -40,7 +40,7 @@
                       </a>
                       <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="devolverLibro.php">Devolver Libro</a></li>
-                        <li><a class="dropdown-item" href="#">Devolver Equipo</a></li>
+                        <li><a class="dropdown-item" href="devolverComputador.php">Devolver Equipo</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown" >
