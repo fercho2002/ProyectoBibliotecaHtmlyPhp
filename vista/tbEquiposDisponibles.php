@@ -21,7 +21,7 @@
       <a href="principal.php" class="btn btn-success" style="position:absolute; top:20px; right:20px;">volver a inicio</a>
           <div id="diviz" class="divs">
             <div class="divgenerales" id="div1">
-              <label class="labelgeneralestablas  ">Libros Disponibles</label>
+              <label class="labelgeneralestablas  ">Computadores Disponibles</label>
             </div>
             
             <table class="table">
@@ -36,6 +36,7 @@
   <tbody>
       <?php  
             while($resultado=mysqli_fetch_array($tab)){
+            
       ?>
     <tr>
      
@@ -44,7 +45,7 @@
       <td><?php echo $resultado['serialequipo'] ?></td>
       
     </tr>
-    <?php } ?>
+    <?php  } ?>
    
   </tbody>
 </table>  

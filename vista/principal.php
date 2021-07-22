@@ -11,7 +11,7 @@
 <body>
   
 <nav class="navbar navbar-expand-lg navbar-light fondodegradado " >
-      <form>
+      <form action="cerrarsesion.php" method="post">
               <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-3 mb-lg-0">
@@ -70,9 +70,9 @@
                     </li>
                     
                   </ul>
-                  <form class="d-flex" action="cerrarsecion.php" method="post">
-                  <button class="btn btn-outline-success" type="submit" href="loguin.php">Cerrar Seccion</button>
-                </form>
+                  
+                  <button class="btn btn-outline-success" type="submit"  name="fbtn" value="cerrar">Cerrar Seccion</button>
+               
 
                 </div>
               </div>

@@ -11,9 +11,9 @@
         private $observacion;
         private $actualmente = "disponible";
 
-        function __construct($co,$no,$ge,$au,$ma,$id,$es,$ob){
+        function __construct($co,$no,$ge,$au,$ma,$id,$es,$ob,$idb){
             $this->conexion = $co; 
-            $this->idbibliotecario = 100243838; 
+            $this->idbibliotecario = $idb; 
             $this->nombre = $no;
             $this->genero = $ge;
             $this->autor = $au;

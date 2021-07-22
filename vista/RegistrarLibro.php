@@ -35,12 +35,18 @@
               <label class="labelgenerales">Id Libros</label>
               <input  id="input5" class="inputgenerales" type="text"  placeholder="id" name="fid" >
           </div>
-          
+                <?php 
+                    
+                    session_start();
+                    @$id = $_SESSION["idU"];
+
+                ?>
           </div>
          <div id="divab">
             <div class="divfooter">
              <label class="todoab">Id bibliotecario:</label>
-             <label class="todoab" name="fidbi">1002438389</label>
+             <input  class="todoab" type="text" id="observacion" class="inputs"  name="fidB" value="<?php echo $id ?>">
+            
             </div>
             <div class="divfooter">
              <label class="todoab">estado</label>

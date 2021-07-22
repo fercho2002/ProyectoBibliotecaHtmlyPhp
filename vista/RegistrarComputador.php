@@ -8,6 +8,11 @@
     <link href="../boodstrap/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estiloregistarcomputador.css">
 </head>
+<?php 
+              session_start();
+              @$id = $_SESSION["idU"];
+
+            ?>
 <body>
   <content>
       <form id="general" action="../controlador/controladorRegistrarEquipo.php" method="post">
@@ -26,18 +31,16 @@
               <label class="labelgenerales">Modelo</label>
               <input  id="input3" class="inputgenerales" type="text"  placeholder="modelo" name="fmodelo">
           </div>
-         
-         
           </div>
          
           <div id="divab">
             <div class="divfooter">
-             <label class="todoab">Id bibliotecario</label>
-             <label class="todoab">1002438389</label>
+             <label class="todoab">Id bibliotecario : </label>
+             <input  class="todoab" type="text" id="observacion" disabled class="inputs"  name="fidB" value="<?php echo $id ?>" >
             </div>
             <div class="divfooter">
              <label class="todoab">estado</label>
-             <input  class="todoab" type="text" id="estado" class="inputs" placeholder="Estado del pc" name="festado">
+             <input  class="todoab"  type="text" id="estado" class="inputs" placeholder="Estado del pc" name="festado">
             </div>
             <div class="divfooter">
              <label  class="todoab" >Observacion</label>

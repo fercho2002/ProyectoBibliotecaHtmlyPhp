@@ -32,7 +32,7 @@
       <th scope="col">Nombre</th>
       <th scope="col">Genero</th>
       <th scope="col">Autor</th>
-    </tr>lo
+    </tr>
   </thead>
   <tbody>
       <?php  

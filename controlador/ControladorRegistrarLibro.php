@@ -13,9 +13,10 @@
         $id = $_POST["fid"];
         $es = $_POST["festado"];
         $ob = $_POST["fobservacion"];
+        $idb = $_POST["fidB"];
 
         include_once("../modelo/mdRegistrarLibro.php");
-        $md = new mdRegistrarLibro($conexionbd,$no,$ge,$au,$ma,$id,$es,$ob);
+        $md = new mdRegistrarLibro($conexionbd,$no,$ge,$au,$ma,$id,$es,$ob,$idb);
         $insertar = $md->insertar();
         if($insertar == true){
             header("location:../vista/RegistrarLibro.php?mensaje=insertado");   

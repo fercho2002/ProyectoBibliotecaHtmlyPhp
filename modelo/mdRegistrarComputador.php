@@ -1,5 +1,9 @@
 <?php
+    
     class mdRegistrarComputador{
+
+        
+        
         private $conexion;
         private $idbibliotecario;
         private $marca;
@@ -9,9 +13,9 @@
         private $observacion;
         private $actualmente = "disponible";
 
-        function __construct($co,$ma,$se,$mo,$es,$ob){
+        function __construct($co,$ma,$se,$mo,$es,$ob,$idb){
             $this->conexion = $co; 
-            $this->idbibliotecario = 100243838; 
+            $this->idbibliotecario = $idb; 
             $this->marca = $ma;
             $this->serial = $se;
             $this->modelo = $mo;

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,17 +9,17 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-
+<?php
     session_start();
-    @$estado = $_SESSION["estado"];
-    if($estado=="si"){
-        header("location:../ProyectoBibliotecaHtml/vista/principal.php");  
-    }
-    else{
-             header("location:../ProyectoBibliotecaHtml/vista/loguin.php");   
 
-    }
-    ?>  
+    $boton = $_POST["fbtn"];
+    
+        $_SESSION["estado"]="no";
+        session_destroy();
+        //var_dump($_SESSION["estado"]);
+        header("Location:loguin.php");   
+    
+    
+?> 
 </body>
 </html>

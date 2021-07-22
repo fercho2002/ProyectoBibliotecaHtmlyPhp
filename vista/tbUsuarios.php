@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +15,9 @@
 
       <form id="generaltablasEx" action="../controlador/controladorUsuarios.php" method="post">	 	
       <?php 
-
+          session_start();
           @$libro = unserialize($_GET['libro']);
-          @$computador = unserialize($_GET['computador']);
+          @$computador =  unserialize($_GET['computador']);
           @$id = $_GET['id'];
 
       ?>
@@ -47,22 +48,29 @@
   </thead>
   <tbody>
       <?php  
-          if(isset($libro)){
-                while($li=mysqli_fetch_array($libro)){
-          ?> 
+     
+            if(!empty ($libro)){
+                foreach($libro as $lis){
+                 
+                
+
+                
+
+                  ?>
+          
     <tr>
      
-      <td><?php echo $li['idlibro'] ?></td>
-      <td><?php echo $li['nombrelibro'] ?></td>
-      <td><?php echo $li['fechadeprestamo'] ?></td>
-      <td><?php echo $li['fechadeentregado'] ?></td>
-      <td><?php echo $li['actualmente'] ?></td>
-      <td><?php echo $li['estado'] ?></td>
-      <td><?php echo $li['observacion'] ?></td>
-      <td><?php echo $li['retrazo'] ?></td>
+      <td><?php echo $lis[0] ?></td>
+      <td><?php echo $lis[1] ?></td>
+      <td><?php echo $lis[2] ?></td>
+      <td><?php echo $lis[3] ?></td>
+      <td><?php echo $lis[4] ?></td>
+      <td><?php echo $lis[5] ?></td>
+      <td><?php echo $lis[6] ?></td>
+      <td><?php echo $lis[7] ?></td>
     </tr>
     
-    <?php } } ?>
+    <?php   } }?>
   </tbody>
 </table>  
 <label class="labelgeneralestablas  ">computadores Prestados</label>
@@ -82,21 +90,22 @@
   </thead>
   <tbody>
       <?php  
-                   while($co=mysqli_fetch_array($computador)){
+            if(!empty ($computador)){
+              foreach($computador as $co){
               ?>  
     <tr>
      
-      <td><?php echo $co['marca'] ?></td>
-      <td><?php echo $co['modelo'] ?></td>
-      <td><?php echo $co['serialequipo'] ?></td>
-      <td><?php echo $co['fechadeprestamo'] ?></td>
-      <td><?php echo $co['fechadeentregado'] ?></td>
-      <td><?php echo $co['actualmente'] ?></td>
-      <td><?php echo $co['estado'] ?></td>
-      <td><?php echo $co['observacion'] ?></td>
-      <td><?php echo $co['retrazo'] ?></td>
+      <td><?php echo $co[0] ?></td>
+      <td><?php echo $co[1] ?></td>
+      <td><?php echo $co[2] ?></td>
+      <td><?php echo $co[3] ?></td>
+      <td><?php echo $co[4] ?></td>
+      <td><?php echo $co[5] ?></td>
+      <td><?php echo $co[6] ?></td>
+      <td><?php echo $co[7] ?></td>
+      <td><?php echo $co[8] ?></td>
     </tr>
-    <?php } ?>
+    <?php   } }?>
    
   </tbody>
 </table>  

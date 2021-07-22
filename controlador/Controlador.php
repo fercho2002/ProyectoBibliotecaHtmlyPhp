@@ -5,6 +5,7 @@
     $conexion = $objeto->conectarbd();
     //verifica que el boton sea el de ingresar
     if($ingreso=='ingresar'){
+        session_start();
         $nik = $_POST["femail"];
         $pass = $_POST["fcontraseña"];
         $ro = "bibliotecario";
@@ -13,7 +14,10 @@
         $modelo = new loguin($conexion,$ro,$nik,$pass);
         $id = $modelo->verificar();
         if($id > 0){
+            $_SESSION["idU"]=$id;
+            $_SESSION["estado"]="si";
             header("location:../vista/principal.php");   
+            
         }
         else{
             header("location:../vista/loguin.php?mensaje=incorrecto");
