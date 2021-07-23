@@ -64,9 +64,9 @@
                         Buscar
                       </a>
                       <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Buscar Libro por Genero</a></li>
+                        <li><a class="dropdown-item" href="buscarLibroGenero.php">Buscar Libro por Genero</a></li>
                         <li><a class="dropdown-item" href="#">Buscar Libro por Materia</a></li>
-                        <li><a class="dropdown-item" href="buscarlibroAutor.php ">Buscar Libro por Autor</a></li>
+                        <li><a class="dropdown-item" href="buscarLibroAutor.php ">Buscar Libro por Autor</a></li>
                       </ul>
                     </li>
                       

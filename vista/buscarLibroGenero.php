@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar por Autor</title>
+    <title>Buscar por Genero</title>
     <link href="../boodstrap/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/generales.css">
 </head>
@@ -16,26 +16,26 @@
       <?php 
           session_start();
           @$libro = unserialize($_GET['libro']);
-          @$autor = $_GET['autor'];
+          @$genero = $_GET['genero'];
           
 
       ?>
       <a href="principal.php" class="btn btn-success" style="position:absolute; top:20px; right:20px;">volver a inicio</a>
           <div id="diviz" class="divs">
           <div class="divgenerales" id="div1">
-              <label class="labelgeneralesultimo">Autor: </label>
-              <input  id="input1" class="inputgenerales " type="text"  name="fentrada" value="<?php echo $autor ?>">
+              <label class="labelgeneralesultimo">Genero: </label>
+              <input  id="input1" class="inputgenerales " type="text"  name="fentrada" value="<?php echo $genero ?>">
           </div>
           <div >
-                <button type="submit" class="btn btn-warning botones " name="fboton" value="autor" style="margin: 10px 20px;">Buscar</button>
+                <button type="submit" class="btn btn-warning botones " name="fboton" value="genero" style="margin: 10px 20px;">Buscar</button>
           </div >
-          <label class="labelgeneralestablas  ">Libros Por Autor</label>
+          <label class="labelgeneralestablas  ">Libros Por Genero</label>
             <table class="table">
   <thead>
     <tr>
       <th scope="col">Id Libro</th>
       <th scope="col">Nombre Libro</th>
-      <th scope="col">Genero</th>
+      <th scope="col">Autor</th>
       <th scope="col">Estado</th>
       <th scope="col">Observacion</th>
       
