@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="../css/hoja.css" >
 </head>
 <body>
-  
+  <?php 
+  session_start();
+  @$nom = $_SESSION["nombre"];
+  ?>
 <nav class="navbar navbar-expand-lg navbar-light fondodegradado " >
       <form action="cerrarsesion.php" method="post">
               <div class="container-fluid">
@@ -61,8 +64,9 @@
                         Buscar
                       </a>
                       <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Buscar Libro</a></li>
-
+                        <li><a class="dropdown-item" href="#">Buscar Libro por Genero</a></li>
+                        <li><a class="dropdown-item" href="#">Buscar Libro por Materia</a></li>
+                        <li><a class="dropdown-item" href="buscarlibroAutor.php ">Buscar Libro por Autor</a></li>
                       </ul>
                     </li>
                       
@@ -82,6 +86,10 @@
           <div id="fondo"><img id="im" src="../imagenes/desc5.jpg">
           </div>
         </form>
+        <div class="flotante">
+          <img class="ima" src="../imagenes/icono.png">
+        <label class="labels" ><?php echo $nom ?></label>
+</div>
   </nav>
   <script src="../boodstrap/bootstrap.bundle.js"></script>  
 </body>

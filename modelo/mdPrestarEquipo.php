@@ -2,7 +2,7 @@
     class mdPrestarEquipo{
         private $serialDoy;
         private $conexion;
-        private $idbibliotecario = 100243838;
+        private $idbibliotecario ;
         private $marca;
         private $serial;
         private $modelo;
@@ -16,12 +16,13 @@
         private $pasopaso = "o";
     
 
-    function __construct($con,$seri,$fechapre,$fechaen,$idus){
+    function __construct($con,$seri,$fechapre,$fechaen,$idus,$idb){
         $this->conexion = $con;
         $this->serialDoy = $seri;
         $this->fechaDePrestamo = $fechapre;
         $this->fechaDeEntrega = $fechaen;
         $this->idUsuario = $idus;
+        $this->idbibliotecario = $idb;
         
     }
 

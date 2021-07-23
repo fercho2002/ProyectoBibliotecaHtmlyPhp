@@ -13,9 +13,12 @@
         include_once("../modelo/loguin.php");
         $modelo = new loguin($conexion,$ro,$nik,$pass);
         $id = $modelo->verificar();
+        $nombre = $modelo->getNombre();
+        
         if($id > 0){
             $_SESSION["idU"]=$id;
             $_SESSION["estado"]="si";
+            $_SESSION["nombre"]=$nombre;
             header("location:../vista/principal.php");   
             
         }

@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../css/generales.css">
 </head>
 <body>
+<?php 
+                    
+                    session_start();
+                    @$id = $_SESSION["idU"];
+
+                ?>
 <content>
 
       <form id="general" action="../controlador/controladorPrestarEquipo.php" method="post">	 	
@@ -21,7 +27,7 @@
           </div>
           <div class="divgenerales" id="div2">
              <label class="labelgenerales">Id bibliotecario:</label>
-             <label id="labelex" name="fidbi">1002438389</label>
+             <input  id="input1" class="inputgenerales " type="text" disabled name="fff" value="<?php echo $id ?>">
           </div>
           <div class="divgenerales" id="div3">
               <label class="labelgenerales">id Usuario</label>
@@ -29,11 +35,11 @@
           </div>
           <div class="divgenerales" id="div4">
               <label class="labelgenerales">Fecha De Prestamo</label>
-              <input  id="input4" class="inputgenerales" type="text"   name="ffechapre">
+              <input  id="input4" class="inputgenerales" type="text" placeholder="dd-mm-yyyy"  name="ffechapre">
           </div>
           <div class="divgenerales" id="div5">
               <label class="labelgenerales">fecha de vuelta</label>
-              <input  id="input5" class="inputgenerales" type="text"  name="ffechaen" >
+              <input  id="input5" class="inputgenerales" type="text" placeholder="dd-mm-yyyy"  name="ffechaen" >
           </div>
           
           </div>

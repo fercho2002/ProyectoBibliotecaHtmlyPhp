@@ -45,7 +45,7 @@
          <div id="divab">
             <div class="divfooter">
              <label class="todoab">Id bibliotecario:</label>
-             <input  class="todoab" type="text" id="observacion" class="inputs"  name="fidB" value="<?php echo $id ?>">
+             <input  class="todoab" type="text" disabled id="observacion" class="inputs"  name="fidB" value="<?php echo $id ?>">
             
             </div>
             <div class="divfooter">

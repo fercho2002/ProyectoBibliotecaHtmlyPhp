@@ -49,11 +49,11 @@
   
           <div class="divgenerales" id="div5">
               <label class="labelgenerales">Fecha De Prestamo</label>
-              <input  id="input5" class="inputgenerales" type="text"  placeholder="dd-mm-yyyy" name="ffechaDePrestamo " value="<?php echo $fechapre ?>" >
+              <input  id="input5" class="inputgenerales" type="text"  placeholder="" name="ffechaDePrestamo " value="<?php echo $fechapre ?>" >
           </div>
           <div class="divgenerales" id="div6">
              <label class="labelgenerales">Fecha De Entrega</label>
-             <input  id="input5" class="inputgenerales" type="text"  placeholder="dd-mm-yyyy" name="ffechaDeEntrega" value="<?php echo $fechaen ?> ">
+             <input  id="input5" class="inputgenerales" type="text"  placeholder="" name="ffechaDeEntrega" value="<?php echo $fechaen ?> ">
           </div>
             
           <hr  width=100% size=5   color="#ff9900" >

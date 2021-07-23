@@ -2,7 +2,7 @@
     class mdPrestarLibro{
         private $idLibroDoy;
         private $conexion;
-        private $idbibliotecario = 100243838;
+        private $idbibliotecario ;
         private $nombre;
         private $genero;
         private $autor;
@@ -18,12 +18,13 @@
         private $pasopaso = "o";
     
 
-    function __construct($con,$idLi,$fechapre,$fechaen,$idus){
+    function __construct($con,$idLi,$fechapre,$fechaen,$idus,$idb){
         $this->conexion = $con;
         $this->idLibroDoy = $idLi;
         $this->fechaDePrestamo = $fechapre;
         $this->fechaDeEntrega = $fechaen;
         $this->idUsuario = $idus;
+        $this->idbibliotecario = $idb;
         
     }
 

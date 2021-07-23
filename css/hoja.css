@@ -35,3 +35,24 @@
 .var{
     height: 60px !important;
 }
+.flotante{
+    justify-content: center;
+    align-items: center;
+    position:fixed; 
+    top: 340px; right:20px;
+    width: 200px;
+    height: 240px;
+}
+.labels{
+    color: black;
+    background-color: #FF8C00;
+    font-size: 30px;
+    align-items: center;
+    margin-left: 60px;
+    border: 7px solid #FF8C00;
+    border-radius: 10px;
+}
+.ima{
+    width: 200px;
+    height: 200px;
+}

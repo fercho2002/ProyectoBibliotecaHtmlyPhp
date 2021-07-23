@@ -3,13 +3,15 @@
    include_once("../modelo/Conectar.php");
    $objeto = new Conectar();
    $conexion = $objeto->conectarbd();
+   session_start();
+    @$idb = $_SESSION["idU"];
    if($boton == "prestar"){
        $serial = $_POST["fserial"];
        $fechapre = $_POST["ffechapre"];
        $fechaen = $_POST["ffechaen"];
        $idus = $_POST["fidus"];
        include_once("../modelo/mdPrestarEquipo.php");
-       $modelo = new mdPrestarEquipo($conexion,$serial,$fechapre,$fechaen,$idus);
+       $modelo = new mdPrestarEquipo($conexion,$serial,$fechapre,$fechaen,$idus,$idb);
        $estado = $modelo->seleccionar();
        
                     if($estado == "seleccionbien"){
