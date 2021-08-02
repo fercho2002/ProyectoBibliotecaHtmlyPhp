@@ -35,11 +35,11 @@
           </div>
           <div class="divgenerales" id="div4">
               <label class="labelgenerales">Fecha De Prestamo</label>
-              <input  id="input4" class="inputgenerales" type="text"  placeholder="dd-mm-yyyy" name="ffechapre">
+              <input  id="input4" class="inputgenerales" type="date"   name="ffechapre">
           </div>
           <div class="divgenerales" id="div5">
               <label class="labelgenerales">fecha de vuelta</label>
-              <input  id="input5" class="inputgenerales" type="text" placeholder="dd-mm-yyyy" name="ffechaen" >
+              <input  id="input5" class="inputgenerales" type="date" placeholder="dd-mm-yyyy" name="ffechaen" >
           </div>
           
           </div>

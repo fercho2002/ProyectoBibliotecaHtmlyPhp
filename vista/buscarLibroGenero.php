@@ -17,6 +17,10 @@
           session_start();
           @$libro = unserialize($_GET['libro']);
           @$genero = $_GET['genero'];
+
+          include_once("../modelo/Conectar.php");
+          $conexion = new Conectar();
+          $conexionbd = $conexion->conectarbd();
           
 
       ?>
@@ -24,8 +28,24 @@
           <div id="diviz" class="divs">
           <div class="divgenerales" id="div1">
               <label class="labelgeneralesultimo">Genero: </label>
-              <input  id="input1" class="inputgenerales " type="text"  name="fentrada" value="<?php echo $genero ?>">
+              <select name="fentrada" >
+              <option>Seleccione</option>
+            <?php 
+                $dis = "disponible";
+                $resultado = mysqli_query($conexionbd,"SELECT DISTINCT genero FROM libros WHERE actualmente = '$dis' ORDER BY genero ASC ");
+                $res = $resultado->fetch_all();
+                foreach ($res as $re){
+                  $genero = $re[0];
+                  
+            ?>
+            <option value="<?php echo $genero; ?>" ><?php echo $genero; ?></option>
+
+            <?php
+                }
+            ?>
+          </select>
           </div>
+         
           <div >
                 <button type="submit" class="btn btn-warning botones " name="fboton" value="genero" style="margin: 10px 20px;">Buscar</button>
           </div >

@@ -17,6 +17,10 @@
           session_start();
           @$libro = unserialize($_GET['libro']);
           @$autor = $_GET['autor'];
+
+          include_once("../modelo/Conectar.php");
+          $conexion = new Conectar();
+          $conexionbd = $conexion->conectarbd();
           
 
       ?>
@@ -24,7 +28,22 @@
           <div id="diviz" class="divs">
           <div class="divgenerales" id="div1">
               <label class="labelgeneralesultimo">Autor: </label>
-              <input  id="input1" class="inputgenerales " type="text"  name="fentrada" value="<?php echo $autor ?>">
+              <select name="fentrada" >
+                <option>Seleccione</option>
+            <?php 
+                $dis = "disponible";
+                $resultado = mysqli_query($conexionbd,"SELECT DISTINCT autor FROM libros WHERE actualmente = '$dis' ORDER BY autor ASC ");
+                $res = $resultado->fetch_all();
+                foreach ($res as $re){
+                  $autor = $re[0];
+                  
+            ?>
+            <option value="<?php echo $autor; ?>" ><?php echo $autor; ?></option>
+
+            <?php
+                }
+            ?>
+          </select>
           </div>
           <div >
                 <button type="submit" class="btn btn-warning botones " name="fboton" value="autor" style="margin: 10px 20px;">Buscar</button>
