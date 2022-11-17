@@ -11,7 +11,7 @@
 <body>
 <content>
 
-      <form id="general" action="../controlador/controladorRegistrarLibro.php" method="post">	 	
+      <form id="general" action="../controlador/ControladorRegistrarLibro.php" method="post">	 	
       
       <a href="principal.php" class="btn btn-success" style="position:absolute; top:20px; right:20px;">volver a inicio</a>
           <div id="diviz" class="divs">
